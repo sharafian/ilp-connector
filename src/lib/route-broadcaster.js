@@ -238,6 +238,7 @@ class RouteBroadcaster {
       const connectorLedger = configRoute.connectorLedger
       const connector = configRoute.connectorAccount
       const targetPrefix = configRoute.targetPrefix
+      console.log('configRoute configRoute:', configRoute)
 
       const route = new Route(
         // use a 1:1 curve as a placeholder (it will be overwritten by a remote quote)
@@ -249,9 +250,11 @@ class RouteBroadcaster {
           sourceAccount: connector,
           targetPrefix: targetPrefix }
       )
+      console.log('route configRoute:', route)
 
       // set the noExpire option to true when adding config routes
       this.routingTables.addRoute(route, true)
+      console.log('finished adding')
     }
 
     // returns a promise in order to be similar to reloadLocalRoutes()
