@@ -33,8 +33,8 @@ function * executeSourceTransfer (destinationTransfer, fulfillment, ledgers, bac
         destination_amount: destinationTransfer.amount
       })
     )
-    .catch(() => {
-      log.error('Attempted to execute source transfer but it was unsucessful: we have not been fully repaid')
+    .catch((e) => {
+      log.error('Attempted to execute source transfer but it was unsucessful: we have not been fully repaid:', e.stack)
     })
 }
 
