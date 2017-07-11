@@ -241,8 +241,8 @@ class RouteBroadcaster {
       console.log('configRoute configRoute:', configRoute)
 
       const route = new Route(
-        // use a 1:1 curve as a placeholder (it will be overwritten by a remote quote)
-        [ [0, 0], [Number.MAX_VALUE, Number.MAX_VALUE] ],
+        // don't give a curve, to foce a remote quote
+        null,
         // the second ledger is inserted to make sure this the hop to the
         // connectorLedger is not considered final.
         [ connectorLedger, targetPrefix ],
